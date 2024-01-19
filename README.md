@@ -27,3 +27,21 @@ The problem with that approach is, it would be difficult to package and version 
 
 ### Set Up
 This project is partly a continuation of your Ansible work, so simply add and subtract based on the new setup in this project. It will require a lot of servers to simulate all the different environments from dev/ci all the way to production. This will be quite a lot of servers altogether (But you don’t have to create them all at once. Only create servers required for an environment you are working with at the moment. For example, when doing deployments for development, do not create servers for integration, pentest, or production yet).
+
+To get started, we will focus on these environments initially.
+* Ci
+* Dev
+* Pentest
+Both System Integration Testing (SIT) and UAT – User Acceptance Testing do not require a lot of extra installation or configuration. They are basically the webservers holding our applications. But Penetration testing is where we will conduct security related tests, so some other tools and specific configurations will be needed. In some cases, it will also be used for Performance and Load testing. Otherwise, that can also be a separate environment on its own. It all depends on decisions made by the company and the team running the show.
+What we want to achieve, is having Nginx to serve as a reverse proxy for our sites and tools. Each environment setup is represented in the below table and diagrams.
+
+### Table
+---------
+
+   CI  |  DEV  |  SIT  |  UAT  |  PENTEST  | PRE-PROD | PROD |
+|------|-------|-------|--------|----------|----------|---------|
+|Nginx| Nginx|Nginx|Nginx|Nginx| Nginx| Nginx |
+|Sonarqube|Tooling|Tooling |Tooling|Tooling|Tooling|Tooling|
+|Artifactory |TODO  WebApp|TODO  WebApp|TODO  WebApp|TODO  WebApp|TODO  WebApp|TODO  WebApp
+   |Jenkins|  ___   |  __  |  __  |  __  |  __  |    __|
+
