@@ -24,3 +24,6 @@ As part of the ongoing infrastructure development with Ansible started from Proj
 The problem with that approach is, it would be difficult to package and version the software for different releases. And so, in this project, we will be using a different approach for releases, rather than downloading directly from git, we will be using [Ansible uri module](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/uri_module.html).
 
 ![cicd](./images/cicd-pipeline.png)
+
+### Set Up
+This project is partly a continuation of your Ansible work, so simply add and subtract based on the new setup in this project. It will require a lot of servers to simulate all the different environments from dev/ci all the way to production. This will be quite a lot of servers altogether (But you don’t have to create them all at once. Only create servers required for an environment you are working with at the moment. For example, when doing deployments for development, do not create servers for integration, pentest, or production yet).
