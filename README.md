@@ -61,7 +61,7 @@ What we want to achieve, is having Nginx to serve as a reverse proxy for our sit
     ├── sit
     └── uat
 
-ci inventory file
+#### ci inventory file
     [jenkins]
     <Jenkins-Private-IP-Address>
 
@@ -77,35 +77,36 @@ ci inventory file
     [artifact_repository]
     <Artifact_repository-Private-IP-Address>
 
-dev Inventory file
-[tooling]
-<Tooling-Web-Server-Private-IP-Address>
+#### dev Inventory file
+    [tooling]
+    <Tooling-Web-Server-Private-IP-Address>
 
 
-[todo]
-<Todo-Web-Server-Private-IP-Address>
+    [todo]
+    <Todo-Web-Server-Private-IP-Address>
 
 
-[nginx]
-<Nginx-Private-IP-Address>
+    [nginx]
+    <Nginx-Private-IP-Address>
 
 
-[db:vars]
-ansible_user=ec2-user
-ansible_python_interpreter=/usr/bin/python
+    [db:vars]
+    ansible_user=ec2-user
+    ansible_python_interpreter=/usr/bin/python
 
 
-[db]
-<DB-Server-Private-IP-Address>
-pentest inventory file
-[pentest:children]
-pentest-todo
-pentest-tooling
+    [db]
+    <DB-Server-Private-IP-Address>
+
+#### pentest inventory file
+    [pentest:children]
+    pentest-todo
+    pentest-tooling
 
 
-[pentest-todo]
-<Pentest-for-Todo-Private-IP-Address>
+    [pentest-todo]
+    <Pentest-for-Todo-Private-IP-Address>
 
 
-[pentest-tooling]
-<Pentest-for-Tooling-Private-IP-Address>
+    [pentest-tooling]
+    <Pentest-for-Tooling-Private-IP-Address>
