@@ -49,3 +49,15 @@ What we want to achieve, is having Nginx to serve as a reverse proxy for our sit
 ![ci](./images/ci-environment.png)
 
 ![ci](./images/ci-environment-2.png)
+
+
+### Ansible Inventory should look like this
+
+    ├── ci
+    ├── dev
+    ├── pentest
+    ├── pre-prod
+    ├── prod
+    ├── sit
+    └── uat
+
