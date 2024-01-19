@@ -143,3 +143,9 @@ Start the jenkins server
     sudo systemctl start jenkins
     sudo systemctl enable jenkins
     sudo systemctl status jenkins
+
+Install git and clone down your [ansible-congig-mgt](https://github.com/lateef-taiwo/ANSIBLE-PROJECTS.git) repository
+
+![git](./images/install-git.png)
+
+![git](./images/git-clone.png)
