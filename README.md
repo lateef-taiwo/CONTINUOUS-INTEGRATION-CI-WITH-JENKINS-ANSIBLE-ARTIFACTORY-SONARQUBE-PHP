@@ -122,4 +122,24 @@ Now go ahead and Add two more roles to ansible:
 
     Install jenkins with its dependencies using the official documentation from Jenkins here
 
-    Update the bash profile
+### Update the bash profile
+
+    sudo -i
+
+    nano .bash_profile
+
+    export JAVA_HOME=$(dirname $(dirname $(readlink $(readlink $(which java)))))
+    export PATH=$PATH:$JAVA_HOME/bin 
+    export CLASSPATH=.:$JAVA_HOME/jre/lib:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar
+
+Reload the bash profile
+
+    source ~/.bash_profile
+
+NB: This is done so that the path is exported anytime the machine is restarted
+
+Start the jenkins server
+
+    sudo systemctl start jenkins
+    sudo systemctl enable jenkins
+    sudo systemctl status jenkins
