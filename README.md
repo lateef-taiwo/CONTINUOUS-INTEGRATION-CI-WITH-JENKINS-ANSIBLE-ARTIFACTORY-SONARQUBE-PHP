@@ -110,3 +110,16 @@ What we want to achieve, is having Nginx to serve as a reverse proxy for our sit
 
     [pentest-tooling]
     <Pentest-for-Tooling-Private-IP-Address>
+
+ANSIBLE ROLES FOR CI ENVIRONMENT
+
+Now go ahead and Add two more roles to ansible:
+
+    SonarQube (Scroll down to the Sonarqube section to see instructions on how to set up and configure SonarQube manually)
+    Artifactory
+
+### Configuring the Jenkins Server
+
+    Install jenkins with its dependencies using the official documentation from Jenkins here
+
+    Update the bash profile
