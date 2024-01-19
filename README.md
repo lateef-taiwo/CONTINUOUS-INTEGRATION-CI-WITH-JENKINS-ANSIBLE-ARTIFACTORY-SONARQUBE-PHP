@@ -43,5 +43,9 @@ What we want to achieve, is having Nginx to serve as a reverse proxy for our sit
 |Nginx| Nginx|Nginx|Nginx|Nginx| Nginx| Nginx |
 |Sonarqube|Tooling|Tooling |Tooling|Tooling|Tooling|Tooling|
 |Artifactory |TODO  WebApp|TODO  WebApp|TODO  WebApp|TODO  WebApp|TODO  WebApp|TODO  WebApp
-   |Jenkins|  ___   |  __  |  __  |  __  |  __  |    __|
+   |Jenkins|  __   |  __  |  __  |  __  |  __  |    __|
 
+### CI-Environment
+![ci](./images/ci-environment.png)
+
+![ci](./images/ci-environment-2.png)
