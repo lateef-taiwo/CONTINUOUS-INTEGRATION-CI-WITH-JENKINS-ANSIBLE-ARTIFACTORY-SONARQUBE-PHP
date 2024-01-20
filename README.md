@@ -206,3 +206,7 @@ At this point you may not have a Jenkinsfile in the Ansible repository, so Blue 
 #### Create our Jenkinsfile
 
 Inside the Ansible project, create a new directory deploy and start a new file Jenkinsfile inside the directory. For me, I created a new repository for this project and copied the contents of the ansible-config-artifact repository to it.
+
+![jenkins](./images/jenkinsfile.png)
+
+![jenkins](./images/jenkinsfile-2.png)
