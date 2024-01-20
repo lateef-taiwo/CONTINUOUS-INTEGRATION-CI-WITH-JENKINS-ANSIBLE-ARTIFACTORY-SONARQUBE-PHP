@@ -214,3 +214,4 @@ In previous projects, you have been launching Ansible commands manually from a C
 * Now go back into the Ansible pipeline in Jenkins, and select configure
 
 * Scroll down to Build Configuration section and specify the location of the Jenkinsfile at deploy/Jenkinsfile
+
