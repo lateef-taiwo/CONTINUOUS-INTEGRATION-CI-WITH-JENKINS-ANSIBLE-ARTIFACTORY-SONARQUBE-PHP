@@ -126,17 +126,25 @@ Now go ahead and Add two more roles to ansible:
 
     sudo -i
 
-    nano .bash_profile
+    vi .bash_profile
+
+ ![vi](./images/source-bash_profile.png)
 
     export JAVA_HOME=$(dirname $(dirname $(readlink $(readlink $(which java)))))
     export PATH=$PATH:$JAVA_HOME/bin 
     export CLASSPATH=.:$JAVA_HOME/jre/lib:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar
 
+![vi](./images/bash_profile.png)
+
 Reload the bash profile
 
     source ~/.bash_profile
 
+![vi](./images/source-bash_profile.png)
+
 NB: This is done so that the path is exported anytime the machine is restarted
+
+Install jenkins from the official [documentation](https://www.jenkins.io/doc/book/installing/linux/#red-hat-centos)
 
 Start the jenkins server
 
@@ -144,8 +152,19 @@ Start the jenkins server
     sudo systemctl enable jenkins
     sudo systemctl status jenkins
 
+ ![jenkins](./images/jenkins-status.png)
+
 Install git and clone down your [ansible-congig-mgt](https://github.com/lateef-taiwo/ANSIBLE-PROJECTS.git) repository
 
 ![git](./images/install-git.png)
 
 ![git](./images/git-clone.png)
+
+### Configuring Ansible For Jenkins Deployment
+In previous projects, you have been launching Ansible commands manually from a CLI. Now, with Jenkins, we will start running Ansible from Jenkins UI. To do this,
+
+1. Navigate to Jenkins URL
+2. Install & Open Blue Ocean Jenkins Plugin
+3. Create a new pipeline
+4. Select GitHub
+5. Login to GitHub & Generate an Access Token
