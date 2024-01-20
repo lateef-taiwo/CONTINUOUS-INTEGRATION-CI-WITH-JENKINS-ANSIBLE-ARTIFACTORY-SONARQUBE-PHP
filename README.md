@@ -205,14 +205,50 @@ In previous projects, you have been launching Ansible commands manually from a C
 
 #### Create our Jenkinsfile
 
-* Inside the Ansible project, create a new directory deploy and start a new file Jenkinsfile inside the directory. For me, I created a new repository for this project and copied the contents of the ansible-config-artifact repository to it.
+* Inside the Ansible project, create a new directory deploy and start a new file J  `Jenkinsfile `  inside the directory. For me, I created a new repository for this project and copied the contents of the ansible-config-artifact repository to it.
 
 ![jenkins](./images/jenkinsfile.png)
+
+* Add the code snippet below to start building the  Jenkinsfile  gradually. This pipeline currently has just one stage called `Build` and the only thing we are doing is using the shell script module to echo Building Stage
+
+
+    pipeline {
+        agent any
+
+    stages {
+        stage('Build') {
+        steps {
+            script {
+            sh 'echo "Building Stage"'
+            }
+        }
+        }
+        }
+    }
+
 
 ![jenkins](./images/jenkinsfile-2.png)
 
 * Now go back into the Ansible pipeline in Jenkins, and select configure
 
 * Scroll down to Build Configuration section and specify the location of the Jenkinsfile at deploy/Jenkinsfile
+
+![build](./images/Build-configuration.png)
+
+* Back to the pipeline again, this time click "Build now"
+
+![jenkins](./images/build-now.png)
+
+![jenkins](./images/successful-builds.png)
+
+* This will trigger a build and you will be able to see the effect of our basic Jenkinsfile configuration by going through the console output of the build.
+
+![jenkins](./images/successful-builds-2.png)
+
+To really appreciate and feel the difference of Cloud Blue UI, it is recommended to try triggering the build again from Blue Ocean interface.
+
+
+
+
 
 
