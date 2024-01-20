@@ -295,6 +295,7 @@ Let us see this in action.
 
     * In Blue Ocean, you can now see how the Jenkinsfile has caused a new step in the pipeline launch build for the new branch.
 
+
   ![](./images/open-blue-ocean-2.png)
 
 
@@ -308,4 +309,6 @@ Let us see this in action.
    * Clean up
 5. Verify in Blue Ocean that all the stages are working, then merge your feature branch to the main branch
 6. Eventually, your main branch should have a successful pipeline like this in blue ocean
+
+![](./images/open-blue-ocean-2.png)
 
