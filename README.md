@@ -165,6 +165,10 @@ In previous projects, you have been launching Ansible commands manually from a C
 
 1. Navigate to Jenkins URL
 2. Install & Open Blue Ocean Jenkins Plugin
+
+![blue-ocean](./images/open-blue-ocean.png)
+
+![blue-ocean](./images/blue-ocean.png)
 3. Create a new pipeline
 4. Select GitHub
 5. Login to GitHub & Generate an Access Token
