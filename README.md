@@ -308,7 +308,7 @@ Let us see this in action.
    * Deploy 
    * Clean up
 
-So the Jenkinsfile becomes
+After my solution, the Jenkinsfile becomes
 
        pipeline {
     agent any
@@ -376,3 +376,7 @@ So the Jenkinsfile becomes
 
 ![](./images/blue-ocean-successful.png)
 
+
+7. Eventually, your main branch should have a successful pipeline like this in blue ocean.
+
+![](./images/open-blue-ocean-2-main-branch.png)
