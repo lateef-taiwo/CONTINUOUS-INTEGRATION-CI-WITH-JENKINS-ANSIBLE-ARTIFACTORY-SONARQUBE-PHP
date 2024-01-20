@@ -372,3 +372,4 @@ So the Jenkinsfile becomes
 5. Verify in Blue Ocean that all the stages are working, then merge your feature branch to the main branch
 6. Eventually, your main branch should have a successful pipeline like this in blue ocean
 
+
