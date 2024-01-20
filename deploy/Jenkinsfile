@@ -1,4 +1,4 @@
-pipeline {
+   pipeline {
     agent any
 
 
@@ -10,5 +10,47 @@ pipeline {
         }
       }
     }
+
+
+    stage('Test') {
+      steps {
+        script {
+          sh 'echo "Testing Stage"'
+        }
+      }
+    }
+
+    stage('Package') {
+      steps {
+        script {
+          sh 'echo "Packge Stage"'
+        }
+      }
+    }
+
+    stage('Deploy') {
+      steps {
+        script {
+          sh 'echo "Deploy Stage"'
+        }
+      }
+    }
+
+    stage('CLean up') {
+      steps {
+        script {
+          sh 'echo "Clean up"'
+        }
+      }
+    }
+
+    post {
+        success {
+            echo 'All stages executed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed. Check logs for details.'
+        }
+
     }
 }
