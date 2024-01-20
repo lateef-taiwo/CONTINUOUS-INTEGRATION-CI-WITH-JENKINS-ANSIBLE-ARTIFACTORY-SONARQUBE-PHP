@@ -261,6 +261,28 @@ To really appreciate and feel the difference of Cloud Blue UI, it is recommended
 Let us see this in action.
 1. Create a new git branch and name it `feature/jenkinspipeline-stages`
 
+![](./images/git-checkout.png)
+
 2. Currently we only have the Build stage. Let us add another stage called Test. Paste the code snippet below and push the new changes to GitHub.
 
+        pipeline {
+        agent any
 
+        stages {
+            stage('Build') {
+            steps {
+                script {
+                sh 'echo "Building Stage"'
+                }
+            }
+            }
+
+            stage('Test') {
+            steps {
+                script {
+                sh 'echo "Testing Stage"'
+                }
+            }
+            }
+            }
+        }
