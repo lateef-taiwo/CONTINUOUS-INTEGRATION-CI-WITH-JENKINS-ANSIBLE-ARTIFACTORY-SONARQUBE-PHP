@@ -247,3 +247,13 @@ In previous projects, you have been launching Ansible commands manually from a C
 
 To really appreciate and feel the difference of Cloud Blue UI, it is recommended to try triggering the build again from Blue Ocean interface.
 
+1. Click on `Open Blue Ocean`
+
+![click](./images/click-open-blue-ocean.png)
+
+
+2 Select your project
+3. Click on the play button against the branch
+
+![play](./images/play.png)
+
