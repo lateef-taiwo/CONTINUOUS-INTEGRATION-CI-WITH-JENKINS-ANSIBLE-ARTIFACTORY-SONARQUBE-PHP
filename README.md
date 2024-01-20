@@ -210,3 +210,4 @@ Inside the Ansible project, create a new directory deploy and start a new file J
 ![jenkins](./images/jenkinsfile.png)
 
 ![jenkins](./images/jenkinsfile-2.png)
+
