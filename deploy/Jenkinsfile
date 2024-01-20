@@ -3,7 +3,7 @@ pipeline {
 
     stages {
       //Setup stage to delete the workspace, that is cleanup the workspace on the jenkins server
-        stage('Ininitial Cleanup'){
+        stage('Initial Cleanup'){
             steps{
                 dir("$WORKSPACE"){
                   deleteDir()
