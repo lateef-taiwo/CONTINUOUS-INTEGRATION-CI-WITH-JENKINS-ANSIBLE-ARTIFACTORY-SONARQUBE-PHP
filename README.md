@@ -370,6 +370,9 @@ So the Jenkinsfile becomes
 ![](./images/jenkinsfile-quiz.png)
 
 5. Verify in Blue Ocean that all the stages are working, then merge your feature branch to the main branch
-6. Eventually, your main branch should have a successful pipeline like this in blue ocean
+6. Eventually, your main branch should have a successful pipeline like this in blue ocean.
 
+![](./images/build-successful.png)
+
+![](./images/blue-ocean-successful.png)
 
