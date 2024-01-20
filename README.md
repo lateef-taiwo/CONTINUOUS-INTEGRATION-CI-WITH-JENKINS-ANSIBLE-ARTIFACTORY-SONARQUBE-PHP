@@ -198,16 +198,19 @@ In previous projects, you have been launching Ansible commands manually from a C
 
 ![GitHub](./images/connect-3.png)
 
-At this point you may not have a Jenkinsfile in the Ansible repository, so Blue Ocean will attempt to give you some guidance to create one. But we do not need that. We will rather create one ourselves. So, click on Administration to exit the Blue Ocean console.
+* At this point you may not have a Jenkinsfile in the Ansible repository, so Blue Ocean will attempt to give you some guidance to create one. But we do not need that. We will rather create one ourselves. So, click on Administration to exit the Blue Ocean console.
 
 ![GitHub](./images/administration.png)
 
 
 #### Create our Jenkinsfile
 
-Inside the Ansible project, create a new directory deploy and start a new file Jenkinsfile inside the directory. For me, I created a new repository for this project and copied the contents of the ansible-config-artifact repository to it.
+* Inside the Ansible project, create a new directory deploy and start a new file Jenkinsfile inside the directory. For me, I created a new repository for this project and copied the contents of the ansible-config-artifact repository to it.
 
 ![jenkins](./images/jenkinsfile.png)
 
 ![jenkins](./images/jenkinsfile-2.png)
 
+* Now go back into the Ansible pipeline in Jenkins, and select configure
+
+* Scroll down to Build Configuration section and specify the location of the Jenkinsfile at deploy/Jenkinsfile
