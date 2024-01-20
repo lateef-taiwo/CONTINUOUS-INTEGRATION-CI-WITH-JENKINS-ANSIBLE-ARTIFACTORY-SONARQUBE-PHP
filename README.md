@@ -168,7 +168,10 @@ In previous projects, you have been launching Ansible commands manually from a C
 
 ![blue-ocean](./images/open-blue-ocean.png)
 
-![blue-ocean](./images/blue-ocean.png)
 3. Create a new pipeline
+
+![blue-ocean](./images/blue-ocean.png)
+
 4. Select GitHub
+
 5. Login to GitHub & Generate an Access Token
