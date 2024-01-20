@@ -259,7 +259,7 @@ To really appreciate and feel the difference of Cloud Blue UI, it is recommended
 
 * Notice that this pipeline is a multibranch one. This means, if there were more than one branch in GitHub, Jenkins would have scanned the repository to discover them all and we would have been able to trigger a build for each branch.
 Let us see this in action.
-1. Create a new git branch and name it `feature/jenkinspipeline-stages`
+1. Create a new git branch and name it `feature/jenkinspipeline
 
 2. Currently we only have the Build stage. Let us add another stage called Test. Paste the code snippet below and push the new changes to GitHub.
 
@@ -288,3 +288,12 @@ Let us see this in action.
                 }
                 }
             }
+
+3. To make your new branch show up in Jenkins, we need to tell Jenkins to scan the repository.
+     * Click on Scan Repository now  and then refresh the new `feature/jenkinspipeline-stages` as a new pipline in the job
+![scan](./images/scan-repository-now.png)
+
+    * In Blue Ocean, you can now see how the Jenkinsfile has caused a new step in the pipeline launch build for the new branch.
+
+  ![](./images/open-blue-ocean-2.png)
+
