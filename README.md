@@ -174,4 +174,35 @@ In previous projects, you have been launching Ansible commands manually from a C
 
 4. Select GitHub
 
+
 5. Login to GitHub & Generate an Access Token
+
+
+![GitHub](./images/access-token.png)
+![GitHub](./images/access-token-1.png)
+
+![GitHub](./images/access-token-2.png)
+
+![GitHub](./images/access-token-3.png)
+
+![GitHub](./images/connect.png)
+
+
+6. Copy Access Token
+
+7. Paste the token and connect
+
+8. Create a new pipelne
+
+![GitHub](./images/connect-2.png)
+
+![GitHub](./images/connect-3.png)
+
+At this point you may not have a Jenkinsfile in the Ansible repository, so Blue Ocean will attempt to give you some guidance to create one. But we do not need that. We will rather create one ourselves. So, click on Administration to exit the Blue Ocean console.
+
+![GitHub](./images/administration.png)
+
+
+#### Create our Jenkinsfile
+
+Inside the Ansible project, create a new directory deploy and start a new file Jenkinsfile inside the directory. For me, I created a new repository for this project and copied the contents of the ansible-config-artifact repository to it.
