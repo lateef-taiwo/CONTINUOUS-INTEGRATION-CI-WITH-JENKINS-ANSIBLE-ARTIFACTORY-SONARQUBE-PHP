@@ -263,4 +263,28 @@ Let us see this in action.
 
 2. Currently we only have the Build stage. Let us add another stage called Test. Paste the code snippet below and push the new changes to GitHub.
 
+![](./images/git-checkout.png)
 
+2. Currently we only have the Build stage. Let us add another stage called Test. Paste the code snippet below and push the new changes to GitHub.
+
+        pipeline {
+        agent any
+
+            stages {
+            stage('Build') {
+                steps {
+                script {
+                sh 'echo "Building Stage"'
+                }
+            }
+            }
+
+            stage('Test') {
+                 steps {
+                script {
+                sh 'echo "Testing Stage"'
+                    }
+                }
+                }
+                }
+            }
