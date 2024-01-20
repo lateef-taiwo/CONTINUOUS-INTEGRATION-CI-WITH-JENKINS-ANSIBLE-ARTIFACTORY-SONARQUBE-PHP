@@ -399,5 +399,6 @@ Now that you have a broad overview of a typical Jenkins pipeline. Let us get the
 
 2.Installing Ansible plugin in Jenkins UI
 
+![](./images/ansible-plugin-install.png)
 
 3. Creating Jenkinsfile from scratch. (Delete all you currently have in there and start all over to get Ansible to run successfully)
