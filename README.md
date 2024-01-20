@@ -286,3 +286,7 @@ Let us see this in action.
                 }
                 }
             }
+
+3. To make your new branch show up in Jenkins, we need to tell Jenkins to scan the repository.
+ Click on Scan Repository now  and then refresh the new `feature/jenkinspipeline-stages` as a new pipline in the job
+![scan](./images/scan-repository-now.png)
