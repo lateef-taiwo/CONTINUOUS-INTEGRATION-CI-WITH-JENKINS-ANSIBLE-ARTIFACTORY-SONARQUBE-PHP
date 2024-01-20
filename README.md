@@ -307,8 +307,68 @@ Let us see this in action.
    * Package 
    * Deploy 
    * Clean up
+
+So the Jenkinsfile becomes
+
+       pipeline {
+    agent any
+
+
+    stages {
+        stage('Build') {
+        steps {
+            script {
+            sh 'echo "Building Stage"'
+            }
+        }
+        }
+
+
+    stage('Test') {
+      steps {
+        script {
+          sh 'echo "Testing Stage"'
+        }
+      }
+    }
+
+    stage('Package') {
+      steps {
+        script {
+          sh 'echo "Packge Stage"'
+        }
+      }
+    }
+
+    stage('Deploy') {
+      steps {
+        script {
+          sh 'echo "Deploy Stage"'
+        }
+      }
+    }
+
+    stage('CLean up') {
+      steps {
+        script {
+          sh 'echo "Clean up"'
+        }
+      }
+    }
+
+    post {
+        success {
+            echo 'All stages executed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed. Check logs for details.'
+        }
+
+    }
+}
+
+![](./images/jenkinsfile-quiz.png)
+
 5. Verify in Blue Ocean that all the stages are working, then merge your feature branch to the main branch
 6. Eventually, your main branch should have a successful pipeline like this in blue ocean
-
-![](./images/open-blue-ocean-2.png)
 
