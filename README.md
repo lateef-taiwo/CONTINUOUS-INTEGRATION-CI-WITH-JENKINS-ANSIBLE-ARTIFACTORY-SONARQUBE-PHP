@@ -257,3 +257,10 @@ To really appreciate and feel the difference of Cloud Blue UI, it is recommended
 
 ![play](./images/play.png)
 
+* Notice that this pipeline is a multibranch one. This means, if there were more than one branch in GitHub, Jenkins would have scanned the repository to discover them all and we would have been able to trigger a build for each branch.
+Let us see this in action.
+1. Create a new git branch and name it `feature/jenkinspipeline-stages`
+
+2. Currently we only have the Build stage. Let us add another stage called Test. Paste the code snippet below and push the new changes to GitHub.
+
+
