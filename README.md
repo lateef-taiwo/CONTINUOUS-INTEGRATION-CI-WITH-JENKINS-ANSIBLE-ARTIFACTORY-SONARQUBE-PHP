@@ -380,3 +380,25 @@ After my solution, the Jenkinsfile becomes
 7. Eventually, your main branch should have a successful pipeline like this in blue ocean.
 
 ![](./images/open-blue-ocean-2-main-branch.png)
+
+### RUNNING ANSIBLE PLAYBOOK FROM JENKINS
+Now that you have a broad overview of a typical Jenkins pipeline. Let us get the actual Ansible deployment to work by:
+
+1. Installing Ansible on Jenkins
+
+        sudo yum install ansible -y
+        python3 -m pip install --upgrade setuptools
+        python3 -m pip install --upgrade pip
+        python3 -m pip install PyMySQL
+        python3 -m pip install mysql-connector-python
+        python3 -m pip install psycopg2-binary
+
+  ![](./images/sudo-yum-install-ansible.png)
+  
+  ![](./images/sudo-yum-install-ansible-2.png)
+
+2.Installing Ansible plugin in Jenkins UI
+
+![](./images/ansible-plugin-install.png)
+
+3. Creating Jenkinsfile from scratch. (Delete all you currently have in there and start all over to get Ansible to run successfully)
