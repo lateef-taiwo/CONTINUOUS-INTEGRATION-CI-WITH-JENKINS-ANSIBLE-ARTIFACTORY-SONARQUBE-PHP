@@ -247,8 +247,3 @@ In previous projects, you have been launching Ansible commands manually from a C
 
 To really appreciate and feel the difference of Cloud Blue UI, it is recommended to try triggering the build again from Blue Ocean interface.
 
-
-
-
-
-
