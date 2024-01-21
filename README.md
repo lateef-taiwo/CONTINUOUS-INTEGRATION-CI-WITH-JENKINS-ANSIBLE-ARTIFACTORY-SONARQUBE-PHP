@@ -467,13 +467,11 @@ Now that you have a broad overview of a typical Jenkins pipeline. Let us get the
   
   ![](./images/sudo-yum-install-ansible-2.png)
 
-2.Installing Ansible plugin in Jenkins UI
+2. Installing Ansible plugin in Jenkins UI
 
 ![](./images/ansible-plugin-install.png)
 
-3. Creating Jenkinsfile from scratch. (Delete all you currently have in there and start all over to get Ansible to run successfully)
-
-4. Add credentials in Jenkins UI
+3. Add credentials in Jenkins UI
 
 ![cred](./images/manage-jenkins.png)
 
@@ -483,7 +481,7 @@ Now that you have a broad overview of a typical Jenkins pipeline. Let us get the
 
 ![cred](./images/new-credentials.png)
 
-5. Configure ansible in UI
+4. Configure ansible in UI
 
 ![](./images/manage-jenkins-2.png)
 
@@ -500,3 +498,9 @@ To get the path of a package use the `which` command.
 Enter a name and path to ansible executables directory and click on save
 
 ![](./images/add-ansible.png)
+
+5. Generate your ansible playbook command by using pipeline syntax
+
+![](./images/pipeline-syntax.png)
+
+6. Creating Jenkinsfile from scratch. (Delete all you currently have in there and start all over to get Ansible to run successfully)
