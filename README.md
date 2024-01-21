@@ -503,7 +503,7 @@ Enter a name and path to ansible executables directory and click on save
 
 ![](./images/pipeline-syntax.png)
 
-  Select `ansiblPlaybook: Invoke an ansible playbook` Under `Sample Step`. Do the remaining configurations as in the screenshots below.
+  Select `ansiblePlaybook: Invoke an ansible playbook` Under `Sample Step`. Do the remaining configurations as in the screenshots below.
 
   ![](./images/sample-step.png)
 
