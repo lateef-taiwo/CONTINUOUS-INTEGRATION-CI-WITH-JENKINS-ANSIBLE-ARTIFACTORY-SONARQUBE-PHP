@@ -212,19 +212,19 @@ In previous projects, you have been launching Ansible commands manually from a C
 * Add the code snippet below to start building the  Jenkinsfile  gradually. This pipeline currently has just one stage called `Build` and the only thing we are doing is using the shell script module to echo Building Stage
 
 
-    pipeline {
-        agent any
-
-    stages {
-        stage('Build') {
-        steps {
-            script {
-            sh 'echo "Building Stage"'
-            }
-        }
-        }
-        }
-    }
+       pipeline {
+           agent any
+   
+       stages {
+           stage('Build') {
+           steps {
+               script {
+               sh 'echo "Building Stage"'
+               }
+           }
+           }
+           }
+       }
 
 
 ![jenkins](./images/jenkinsfile-2.png)
