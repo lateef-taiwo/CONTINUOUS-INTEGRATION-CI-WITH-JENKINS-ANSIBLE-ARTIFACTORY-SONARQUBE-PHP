@@ -381,6 +381,76 @@ After my solution, the Jenkinsfile becomes
 
 ![](./images/open-blue-ocean-2-main-branch.png)
 
+
+You can add a stage to clean the jenkins workspace in `/var/lib/jenkins/workspace` so that you will not use up the storage space of the jenkins server with unnecessary build artifact. So this helps clean the workspace.
+
+    pipeline {
+        agent any
+
+        stages {
+          //Setup stage to delete the workspace, that is cleanup the workspace on the jenkins server
+            stage('Ininitial Cleanup'){
+                steps{
+                    dir("$WORKSPACE"){
+                      deleteDir()
+                    }
+                }
+                }
+            stage('Build') {
+                steps {
+                    script {
+                        sh 'echo "Building Stage"'
+                    }
+                }
+            }
+
+            stage('Test') {
+                steps {
+                    script {
+                        sh 'echo "Testing Stage"'
+                    }
+                }
+            }
+
+            stage('Package') {
+                steps {
+                    script {
+                        sh 'echo "Package Stage"'
+                    }
+                }
+            }
+
+            stage('Deploy') {
+                steps {
+                    script {
+                        sh 'echo "Deploy Stage"'
+                    }
+                }
+            }
+
+            //  Setup stage to delete the workspace, that is cleanup the workspace on the jenkins server
+            stage('Clean up') {
+                steps {
+                    script {
+                        sh 'echo "Clean up"'
+                    }
+                    cleanWs()
+                }
+            }
+        }
+
+        post {
+            success {
+                echo 'All stages executed successfully!'
+            }
+            failure {
+                echo 'Pipeline failed. Check logs for details.'
+            }
+        }
+    }
+
+
+
 ### RUNNING ANSIBLE PLAYBOOK FROM JENKINS
 Now that you have a broad overview of a typical Jenkins pipeline. Let us get the actual Ansible deployment to work by:
 
