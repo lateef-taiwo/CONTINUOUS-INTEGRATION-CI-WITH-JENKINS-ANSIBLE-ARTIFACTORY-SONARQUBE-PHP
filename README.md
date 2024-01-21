@@ -503,4 +503,14 @@ Enter a name and path to ansible executables directory and click on save
 
 ![](./images/pipeline-syntax.png)
 
+  Select `ansiblPlaybook: Invoke an ansible playbook` Under `Sample Step`. Do the remaining configurations as in the screenshots below.
+
+  ![](./images/sample-step.png)
+
+  ![](./images/ansible.png)
+
+  ![](./images/generate-pipeline-script.png)
+
+
+
 6. Creating Jenkinsfile from scratch. (Delete all you currently have in there and start all over to get Ansible to run successfully)
