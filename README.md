@@ -480,3 +480,23 @@ Now that you have a broad overview of a typical Jenkins pipeline. Let us get the
 ![cred](./images/global.png)
 
 ![cred](./images/Add-credentials.png)
+
+![cred](./images/new-credentials.png)
+
+5. Configure ansible in UI
+
+![](./images/manage-jenkins-2.png)
+
+scroll down to Ansible installations and click on `Add Ansible`
+
+![](./images/ansible-installations.png)
+
+To get the path of a package use the `which` command.
+
+`which ansible`
+
+![](./images/which-ansible.png)
+
+Enter a name and path to ansible executables directory and click on save
+
+![](./images/add-ansible.png)
