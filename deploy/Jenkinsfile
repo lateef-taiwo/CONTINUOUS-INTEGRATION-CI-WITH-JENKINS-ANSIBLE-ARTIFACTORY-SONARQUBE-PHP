@@ -1,7 +1,12 @@
 pipeline{
     agent any
 
-    stages {
+    stages {('Initial Setup')
+        steps{
+            dir("$WORKSPACE"){
+                deleteDir()
+            }
+        }
         
     }
 }
