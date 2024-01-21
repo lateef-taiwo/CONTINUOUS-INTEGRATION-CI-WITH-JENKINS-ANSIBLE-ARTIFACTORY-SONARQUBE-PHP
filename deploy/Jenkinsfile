@@ -11,14 +11,6 @@ pipeline{
         }
         
     }
-
-        stage('Checkout') {
-            steps {
-                // Checkout source code from version control
-                checkout scm
-            }
-        }
-
 }
 
 // pipeline {
