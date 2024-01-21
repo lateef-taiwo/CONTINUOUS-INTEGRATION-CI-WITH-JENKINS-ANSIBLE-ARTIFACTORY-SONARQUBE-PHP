@@ -472,3 +472,11 @@ Now that you have a broad overview of a typical Jenkins pipeline. Let us get the
 ![](./images/ansible-plugin-install.png)
 
 3. Creating Jenkinsfile from scratch. (Delete all you currently have in there and start all over to get Ansible to run successfully)
+
+4. Add credentials in Jenkins UI
+
+![cred](./images/manage-jenkins.png)
+
+![cred](./images/global.png)
+
+![cred](./images/Add-credentials.png)
