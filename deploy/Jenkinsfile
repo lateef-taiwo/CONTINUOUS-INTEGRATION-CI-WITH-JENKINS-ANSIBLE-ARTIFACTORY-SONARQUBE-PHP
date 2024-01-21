@@ -42,6 +42,7 @@ pipeline {
             }
         }
 
+        //  Setup stage to delete the workspace, that is cleanup the workspace on the jenkins server
         stage('Clean up') {
             steps {
                 script {
