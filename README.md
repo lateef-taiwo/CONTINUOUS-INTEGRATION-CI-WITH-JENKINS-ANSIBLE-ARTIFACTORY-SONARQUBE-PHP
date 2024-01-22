@@ -575,5 +575,14 @@ Enter a name and path to ansible executables directory and click on save
         ssh_args = -o ControlMaster=auto -o ControlPersist=30m -o ControlPath=/tmp/ansible-ssh-%h-%p-%r -o ServerAliveInterval=60 -o ServerAliveCountMax=60 -o ForwardAgent=yes    
 
 
-* Run a build and ensure the playbook was well executed
+* Run a build and ensure the playbook was well executed. 
 
+Note: Ensure you modify the `playbooks/site.yml` file accordingly.
+
+After few build failures, the build was successful.
+
+![](./images/feature-branch-successful.png)
+
+![](./images/ansible-playbook-successful.png)
+
+![](./images/main-successful.png)
