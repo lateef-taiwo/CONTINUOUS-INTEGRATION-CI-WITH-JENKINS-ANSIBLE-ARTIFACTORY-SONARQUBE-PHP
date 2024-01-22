@@ -581,8 +581,22 @@ Note: Ensure you modify the `playbooks/site.yml` file accordingly.
 
 After few build failures, the build was successful.
 
-![](./images/feature-branch-successful.png)
+![](./images/feature-branch-successful-2.png)
+
+![](./images/feature-branch-successful-3.png)
 
 ![](./images/ansible-playbook-successful.png)
 
+![](./images/ansible-playbook-successful-1.png)
+
+![](./images/ansible-playbook-successful-2.png)
+
+![](./images/ansible-playbook-successful-3.png)
+
+![](./images/ansible-playbook-successful-4.png)
+
+![](./images/ansible-playbook-successful-5.png)
+
 ![](./images/main-successful.png)
+
+
