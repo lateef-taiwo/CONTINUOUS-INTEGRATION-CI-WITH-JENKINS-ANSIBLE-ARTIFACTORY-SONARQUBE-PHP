@@ -577,7 +577,7 @@ Enter a name and path to ansible executables directory and click on save
 
 * Run a build and ensure the playbook was well executed. 
 
-Note: Ensure you modify the `playbooks/site.yml` file accordingly.
+Note: Ensure you modify the `playbooks/site.yml` file and inventory/dev accordingly.
 
 After few build failures, the build was successful.
 
@@ -599,4 +599,10 @@ After few build failures, the build was successful.
 
 ![](./images/main-successful.png)
 
+You can login into the nginx and db instance to verify that the services are installed and running.
 
+![](./images/nginx.png)
+
+![](./images/db.png)
+
+![](./images/db-2.png)
