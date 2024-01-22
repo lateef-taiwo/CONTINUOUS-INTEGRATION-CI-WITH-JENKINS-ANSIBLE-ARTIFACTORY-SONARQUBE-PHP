@@ -641,5 +641,62 @@ To deploy to other environments, we will need to use parameters.
 
 3. In the Ansible execution section, remove the hardcoded inventory/dev and replace with `${inventory}`. From now on, each time you hit on execute, it will expect an input.
 
-4. Run a build with parameter to put it to test. build with parameters.
+4. Run a Build with parameters to put it to test. build with parameters.
 
+![](./images/build-with-parameters.png)
+
+### CI/CD PIPELINE FOR TODO APPLICATION
+
+#### Phase 1 – Prepare Jenkins
+
+1. Fork the repository below into your GitHub account https://github.com/lateef-taiwo/php-todo-app.git. Clone the repository in the home directory of the jenkins-ansible server.
+ 
+2. On you Jenkins server, install PHP, its dependencies and Composer tool (Feel free to do this manually at first, then update your Ansible accordingly later)
+
+        yum module reset php -y
+        yum module enable php:remi-7.4 -y
+        yum install -y php php-common php-mbstring php-opcache php-intl php-xml php-gd php-curl php-mysqlnd php-fpm php-json
+        systemctl start php-fpm
+        systemctl enable php-fpm
+        systemctl status php-fpm
+
+  ![](./images/yum.png)
+  
+  ![](./images/yum-install-php.png)
+
+  ![](./images/yum-install-php-2.png)
+
+  ![](./images/systemctl.png)
+
+
+#### Install composer
+
+    curl -sS https://getcomposer.org/installer | php
+    sudo mv composer.phar /usr/bin/composer
+Verify Composer is installed or not
+    
+    composer --version   
+
+  ![](./images/composer.png)
+
+#### Install phpunit, phploc
+
+    dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+    dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+    dnf module reset php
+    dnf module install php:remi-7.4
+    sudo dnf --enablerepo=remi install php-phpunit-phploc
+    wget -O phpunit https://phar.phpunit.de/phpunit-7.phar
+    chmod +x phpunit
+    sudo yum install php-xdebug
+    sudo yum install zip     
+
+  ![](./images/php.png)
+
+  ![](./images/zip.png)
+
+#### Install Jenkins plugins: 
+* Plot plugin and
+* Artifactory plugin
+    * We will use plot plugin to display tests reports, and code coverage information.
+    * The Artifactory plugin will be used to easily upload code artifacts into an Artifactory server    
