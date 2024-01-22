@@ -639,6 +639,6 @@ To deploy to other environments, we will need to use parameters.
             }
         }
 
-3. In the Ansible execution section, remove the hardcoded inventory/dev and replace with ``${inventory}`. From now on, each time you hit on execute, it will expect an input.
+3. In the Ansible execution section, remove the hardcoded inventory/dev and replace with `${inventory}`. From now on, each time you hit on execute, it will expect an input.
 
 4. Run a build with parameter to put it to test. build with parameters
