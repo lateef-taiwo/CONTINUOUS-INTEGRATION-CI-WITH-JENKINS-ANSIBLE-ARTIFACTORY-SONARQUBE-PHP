@@ -696,7 +696,10 @@ Verify Composer is installed or not
   ![](./images/zip.png)
 
 #### Install Jenkins plugins: 
-* Plot plugin and
+* Plot plugin 
 * Artifactory plugin
     * We will use plot plugin to display tests reports, and code coverage information.
     * The Artifactory plugin will be used to easily upload code artifacts into an Artifactory server    
+
+ ![](./images/plot.png)
+ ![](./images/artiifactory.png)
