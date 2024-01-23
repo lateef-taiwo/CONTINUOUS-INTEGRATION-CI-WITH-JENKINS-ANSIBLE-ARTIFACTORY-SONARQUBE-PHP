@@ -695,7 +695,7 @@ Verify Composer is installed or not
 
   ![](./images/zip.png)
 
-#### Install Jenkins plugins: 
+3. Install Jenkins plugins: 
 * Plot plugin 
 * Artifactory plugin
     * We will use plot plugin to display tests reports, and code coverage information.
@@ -703,3 +703,35 @@ Verify Composer is installed or not
 
  ![](./images/plot.png)
  ![](./images/artiifactory.png)
+
+4.  Run the build with the ci inventory so it updates the artifactory server. Ensure you build with parameters and this time use ci because the artifactory host details is in the inventory/ci file.
+
+ ![](./images/build-with-parameters-2.png)
+
+ ![](./images/artifactory-playbook-successful-1.png)
+
+ ![](./images/artifactory-playbook-successful-2.png)
+
+5. To confirm to go public-ip:8081. Login with the default credentials `admin` and `password` and then change the password, then proceed to creating a generic local repository. NB: It is required you open both port 8081 and 8082 in your security group inbound rules.
+
+ ![jfrog](./images/jfrog-login.png)
+
+ ![jfrog](./images/jfrog-login-2.png)
+
+ ![jfrog](./images/jfrog-reset-password.png)
+
+ 6. In Jenkins UI configure Artifactory
+
+ ![](./images/add-jfrog.png)
+
+ ![](./images/jfrog-settings.png)
+click apply and save
+
+#### Phase 2 – Integrate Artifactory repository with Jenkins
+
+1. Create a dummy Jenkinsfile in the [php-todo](https://github.com/lateef-taiwo/php-todo-app.git) repository.
+
+2. Using Blue Ocean, create a multi-branch Jenkins pipeline
+
+3. Edit your mysql roles to 
+ Create database homestead, create user 'homestead'@'' IDENTIFIED BY 'password'; GRANT ALL PRIVILEGES ON * . * TO 'homestead'@'%'; (THE IP ADDRESS OF THE USER WILL BE THAT OF THE JENKINS SERVER TO ALLOW REMOTE ACCESS). locate the file `roles/mysql/default/main.yml`
