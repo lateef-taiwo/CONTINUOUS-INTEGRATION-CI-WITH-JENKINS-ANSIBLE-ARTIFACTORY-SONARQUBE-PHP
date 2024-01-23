@@ -737,3 +737,19 @@ click apply and save
 
        Create database homestead, create user 'homestead'@'' IDENTIFIED BY 'password'; GRANT ALL PRIVILEGES ON * . * TO 'homestead'@'%'; 
     (THE IP ADDRESS OF THE USER WILL BE THAT OF THE JENKINS SERVER TO ALLOW REMOTE ACCESS). Locate the file `roles/mysql/default/main.yml`
+ 
+ ![](images/db-play-successful-1.png)
+
+ ![](images/db-play-successful-2.png)
+
+ ![](images/db-play-successful-3.png)
+
+ ![](./images/db-play-successful-4.png)
+
+ ![](images/db-play-successful-5.png)
+
+ssh into the db to confirm.
+
+ ![](images/systemctl-mysql.png)
+
+ ![](images/sudo-mysql-show-databses.png)
