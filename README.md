@@ -719,3 +719,19 @@ Verify Composer is installed or not
  ![jfrog](./images/jfrog-login-2.png)
 
  ![jfrog](./images/jfrog-reset-password.png)
+
+ 6. In Jenkins UI configure Artifactory
+
+ ![](./images/add-jfrog.png)
+
+ ![](./images/jfrog-settings.png)
+click apply and save
+
+#### Phase 2 – Integrate Artifactory repository with Jenkins
+
+1. Create a dummy Jenkinsfile in the [php-todo](https://github.com/lateef-taiwo/php-todo-app.git) repository.
+
+2. Using Blue Ocean, create a multi-branch Jenkins pipeline
+
+3. Edit your mysql roles to 
+ Create database homestead, create user 'homestead'@'' IDENTIFIED BY 'password'; GRANT ALL PRIVILEGES ON * . * TO 'homestead'@'%'; (THE IP ADDRESS OF THE USER WILL BE THAT OF THE JENKINS SERVER TO ALLOW REMOTE ACCESS). locate the file `roles/mysql/default/main.yml`
