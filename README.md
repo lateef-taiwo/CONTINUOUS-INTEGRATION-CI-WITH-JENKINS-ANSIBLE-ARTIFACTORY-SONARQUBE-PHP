@@ -733,5 +733,7 @@ click apply and save
 
 2. Using Blue Ocean, create a multi-branch Jenkins pipeline
 
-3. Edit your mysql roles to 
- Create database homestead, create user 'homestead'@'' IDENTIFIED BY 'password'; GRANT ALL PRIVILEGES ON * . * TO 'homestead'@'%'; (THE IP ADDRESS OF THE USER WILL BE THAT OF THE JENKINS SERVER TO ALLOW REMOTE ACCESS). locate the file `roles/mysql/default/main.yml`
+3. Edit your mysql roles to:
+
+       Create database homestead, create user 'homestead'@'' IDENTIFIED BY 'password'; GRANT ALL PRIVILEGES ON * . * TO 'homestead'@'%'; 
+    (THE IP ADDRESS OF THE USER WILL BE THAT OF THE JENKINS SERVER TO ALLOW REMOTE ACCESS). Locate the file `roles/mysql/default/main.yml`
