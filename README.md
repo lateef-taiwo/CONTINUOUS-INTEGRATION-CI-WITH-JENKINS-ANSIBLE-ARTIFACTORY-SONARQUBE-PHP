@@ -695,7 +695,7 @@ Verify Composer is installed or not
 
   ![](./images/zip.png)
 
-#### Install Jenkins plugins: 
+3. Install Jenkins plugins: 
 * Plot plugin 
 * Artifactory plugin
     * We will use plot plugin to display tests reports, and code coverage information.
@@ -703,3 +703,19 @@ Verify Composer is installed or not
 
  ![](./images/plot.png)
  ![](./images/artiifactory.png)
+
+4.  Run the build with the ci inventory so it updates the artifactory server. Ensure you build with parameters and this time use ci because the artifactory host details is in the inventory/ci file.
+
+ ![](./images/build-with-parameters-2.png)
+
+ ![](./images/artifactory-playbook-successful-1.png)
+
+ ![](./images/artifactory-playbook-successful-2.png)
+
+5. To confirm to go public-ip:8081. Login with the default credentials `admin` and `password` and then change the password, then proceed to creating a generic local repository. NB: It is required you open both port 8081 and 8082 in your security group inbound rules.
+
+ ![jfrog](./images/jfrog-login.png)
+
+ ![jfrog](./images/jfrog-login-2.png)
+
+ ![jfrog](./images/jfrog-reset-password.png)
