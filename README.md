@@ -609,6 +609,7 @@ You can login into the nginx and db instance to verify that the services are ins
 
 
 ### Parameterizing Jenkinsfile For Ansible Deployment
+====================================================
 
 To deploy to other environments, we will need to use parameters.
 
@@ -810,6 +811,30 @@ Now, update the bind address in the Database server
 
  Now restart mysql server `sudo systemctl restart  mysql`
 
- 
+In the php Todo-App folder,  locate the .env.sample file and update it with, add this under the DB_PASSWORD variable and also change DB_HOST  value to the private IP Address of the Database; 
+
+     DB_CONNECTION=mysql
+     DB_PORT=3306
+
+ ![env](./images/env.png)
 
 
+Notice the Prepare Dependencies section 
+
+* The required file by PHP is .env so we are renaming .env.sample to .env 
+* Composer is used by PHP to install all the dependent libraries used by the application 
+* php artisan uses the .env file to setup the required database objects – (After successful run of this step, login to the database, run show tables and you will see the tables being created for you)
+
+ Connect to the database from the jenkins server since you have configured it as a database client for the database.
+
+ ![](./images/connect-mysql.png)
+
+ ![](./images/connect-mysql-2.png)
+
+ Update the Jenkinsfile to include Unit tests step
+
+    stage('Execute Unit Tests') {
+      steps {
+             sh './vendor/bin/phpunit'
+      }
+    }
