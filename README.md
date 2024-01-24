@@ -810,6 +810,9 @@ Now, update the bind address in the Database server
 
  Now restart mysql server `sudo systemctl restart  mysql`
 
- 
+In the php Todo-App folder,  locate the .env.sample file and update it with, add this under the DB_PASSWORD variable and also change DB_HOST  value to the private IP Address of the Database; 
 
+     DB_CONNECTION=mysql
+     DB_PORT=3306
 
+ ![env](./images/env.png)
