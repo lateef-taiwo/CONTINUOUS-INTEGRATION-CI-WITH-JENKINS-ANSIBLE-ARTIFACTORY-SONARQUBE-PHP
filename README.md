@@ -776,7 +776,7 @@ ssh into the db to confirm.
 
             stage('Checkout SCM') {
                 steps {
-                git branch: 'main', url: 'https://github.com/IwunzeGE/php-todo.git'
+                git branch: 'main', url: 'https://github.com/lateef-taiwo/php-todo-app.git'
                 }
                 }
 
