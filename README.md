@@ -832,3 +832,9 @@ Notice the Prepare Dependencies section
  ![](./images/connect-mysql-2.png)
 
  Update the Jenkinsfile to include Unit tests step
+
+    stage('Execute Unit Tests') {
+      steps {
+             sh './vendor/bin/phpunit'
+      }
+    }
