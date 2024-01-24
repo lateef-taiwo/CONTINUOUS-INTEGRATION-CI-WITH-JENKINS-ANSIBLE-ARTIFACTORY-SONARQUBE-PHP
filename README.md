@@ -793,3 +793,23 @@ ssh into the db to confirm.
             }
 
 6. Build and ensure it works If you get this error, then you need to install mysql-client on the jenkins server and update the bind-address in the DB server
+
+ ![](./images/build-failure.png)
+
+ Install mysql-client using `sudo yum install mysql -y`
+
+  ![](./images/mysql-y.png)
+
+  ![](./images/mysql-y-2.png)
+
+Now, update the bind address in the Database server
+ 
+ ![](./images/mysql-server.png)
+
+ ![](./images/mysqld-cnf.png)
+
+ Now restart mysql server `sudo systemctl restart  mysql`
+
+ 
+
+
