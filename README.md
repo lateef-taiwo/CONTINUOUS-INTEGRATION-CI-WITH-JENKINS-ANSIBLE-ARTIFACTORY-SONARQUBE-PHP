@@ -753,3 +753,43 @@ ssh into the db to confirm.
  ![](images/systemctl-mysql.png)
 
  ![](images/sudo-mysql-show-databses.png)
+
+4. Update the database connectivity requirements in the file .env.sample file.
+
+        DB_CONNECTION=mysql
+        DB_PORT=3306
+
+5. Update Jenkinsfile with proper pipeline configuration.
+
+        pipeline {
+        agent any
+
+        stages {
+
+            stage("Initial cleanup") {
+                steps {
+                dir("${WORKSPACE}") {
+                deleteDir()
+                }
+            }
+            }
+
+            stage('Checkout SCM') {
+                steps {
+                git branch: 'main', url: 'https://github.com/IwunzeGE/php-todo.git'
+                }
+                }
+
+            stage('Prepare Dependencies') {
+                steps {
+                sh 'mv .env.sample .env'
+                sh 'composer install'
+                sh 'php artisan migrate'
+                sh 'php artisan db:seed'
+                sh 'php artisan key:generate'
+                }
+                }
+            }
+            }
+
+6. Build and ensure it works If you get this error, then you need to install mysql-client on the jenkins server and update the bind-address in the DB server
