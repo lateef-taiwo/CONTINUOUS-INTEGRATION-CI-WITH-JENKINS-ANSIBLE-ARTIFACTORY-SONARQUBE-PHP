@@ -1026,18 +1026,26 @@ The Plot menu item
                         state: restarted    
 
     * Edit the artifact url, username and password to match yours
-    * To get the artifacts password
+    * To get the artifacts password click set me up.
 
-![]()
+![](./images/jfrog-click.png)
 
 You'll be prompted to type in your actual password and click on Genertate Token
+
+![](./images/jfrog-generate-password.png)
+
+![](./images/jfrog-generate-token.png)
 
 * Add this snippet to the Jenkinsfile
 
         stage ('Deploy to Dev Environment') {
         steps {
-        build job: 'ansible-config-mgt/main', parameters: [[$class: 'StringParameterValue', name: 'env', value: 'dev']], propagate: false, wait: true
+        build job: '<repository name>/main', parameters: [[$class: 'StringParameterValue', name: 'env', value: 'dev']], propagate: false, wait: true
         }
   }
 
 * Scan the repo, the php-todo should build first and subsequently trigger the build of the ansible-config-mgt when it gets to the Deploy stage.
+
+#### SONARQUBE INSTALLATION
+
+Although I achieved this by using the ansible-galaxy sonarqube role on an Ubuntu based server. (You can check my ansible-config repo for the codes). It can also be achieved by making use of some Linux Kernel configuration changes to ensure optimal performance of the tool – we will increase vm.max_map_count, file discriptor and ulimit.
