@@ -868,6 +868,7 @@ Notice the Prepare Dependencies section
 
                 }
                 }
+
 You should now see a Plot menu item on the left menu. Click on it to see the charts. (The analytics may not mean much to you as it is meant to be read by developers. So, you need not worry much about it – this is just to give you an idea of the real-world implementation).
 
 You will likely get an error, so do the following:
@@ -880,6 +881,20 @@ You will likely get an error, so do the following:
     wget -O phpunit https://phar.phpunit.de/phpunit-7.phar
     chmod +x phpunit
     sudo yum install php-xdebug
+
+[](./images/code-coverage-success.png)
+
+[](./images/code-coverage-success-2.png)
+
+The Plot menu item
+
+![](./images/plots.png)
+
+![](./images/plots-2.png)
+
+![](./images/plots-3.png)
+
+![](./images/plots-4.png)
 
 3. Bundle the application code for into an artifact (archived package) upload to Artifactory
 
