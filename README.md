@@ -929,6 +929,12 @@ The Plot menu item
 
         }
 
+![](./images/package-artifact.png)
+
+![](./images/package-artifact-main.png)
+
+![](./images/php-todo.png)
+
 5. Deploy the application to the dev environment by launching Ansible pipeline
 
     * Launch a server for the todo app
