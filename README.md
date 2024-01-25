@@ -650,7 +650,7 @@ To deploy to other environments, we will need to use parameters.
 
 #### Phase 1 – Prepare Jenkins
 
-1. Fork the repository below into your GitHub account https://github.com/lateef-taiwo/php-todo-app.git. Clone the repository in the home directory of the jenkins-ansible server.
+1. Fork the repository below into your GitHub account [https://github.com/lateef-taiwo/php-todo-app.git](https://github.com/lateef-taiwo/php-todo-app.git). Clone the repository in the home directory of the jenkins-ansible server.
  
 2. On you Jenkins server, install PHP, its dependencies and Composer tool (Feel free to do this manually at first, then update your Ansible accordingly later)
 
@@ -1034,4 +1034,4 @@ You'll be prompted to type in your actual password and click on Genertate Token
         }
   }
 
-* Scan the repo, the php-todo should build first and subsequently trigger the build of the ansible-config-mgt when it gets to the Deploy stage
+* Scan the repo, the php-todo should build first and subsequently trigger the build of the ansible-config-mgt when it gets to the Deploy stage.
