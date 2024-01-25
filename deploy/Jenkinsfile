@@ -29,9 +29,14 @@ pipeline {
       // unit test for php app
     stage('Execute Unit Tests') {
       steps {
-             sh './vendor/bin/phpunit'
+        // Set xdebug.mode to coverage
+            sh 'echo "xdebug.mode=coverage" >> /etc/php.ini'
+
+        // Run PHPUnit
+            sh './vendor/bin/phpunit'
       }
     }
+
     //code analysis for php app
     stage('Code Analysis') {
 	    steps {
@@ -58,6 +63,7 @@ pipeline {
     }
   }
 }
+
 
 // pipeline {
 //   agent any
