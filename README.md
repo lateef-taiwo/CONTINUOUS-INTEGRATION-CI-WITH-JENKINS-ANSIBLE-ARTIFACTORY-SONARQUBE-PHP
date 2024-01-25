@@ -896,6 +896,8 @@ The Plot menu item
 
 ![](./images/plots-4.png)
 
+![](./images/plots-main.png)
+
 3. Bundle the application code for into an artifact (archived package) upload to Artifactory
 
         stage ('Package Artifact') {
