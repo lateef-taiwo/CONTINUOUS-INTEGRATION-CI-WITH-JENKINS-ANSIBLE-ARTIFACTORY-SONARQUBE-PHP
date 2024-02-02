@@ -960,7 +960,6 @@ The Plot menu item
                             - https://rpms.remirepo.net/enterprise/remi-release-8.rpm
                             disable_gpg_check: yes
 
-                    
                     - name: install httpd on the webserver
                     ansible.builtin.yum:
                         name: httpd
