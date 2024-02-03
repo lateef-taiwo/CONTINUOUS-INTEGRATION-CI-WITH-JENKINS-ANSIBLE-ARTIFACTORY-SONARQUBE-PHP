@@ -131,7 +131,7 @@ pipeline {
 //       stage('Run Ansible playbook') {
 //         steps {
 //            ansiblePlaybook become: true, colorized: true, credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'inventory/${inventory}', playbook: 'playbooks/site.yml', vaultTmpPath: ''
-//            //ansiblePlaybook become: true, colorized: true, credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory/dev', playbook: 'playbooks/site.yml'
+//            ansiblePlaybook become: true, colorized: true, credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory/dev', playbook: 'playbooks/site.yml'
 //          }
 //       }
 
@@ -148,8 +148,8 @@ pipeline {
 // pipeline {
 //     agent any
 
+//       Setup stage to delete the workspace, that is cleanup the workspace on the jenkins server
 //     stages {
-//       //Setup stage to delete the workspace, that is cleanup the workspace on the jenkins server
 //         stage('Ininitial Cleanup'){
 //             steps{
 //                 dir("$WORKSPACE"){
@@ -189,7 +189,7 @@ pipeline {
 //             }
 //         }
 
-//         //  Setup stage to delete the workspace, that is cleanup the workspace on the jenkins server
+//         Setup stage to delete the workspace, that is cleanup the workspace on the jenkins server
 //         stage('Clean up') {
 //             steps {
 //                 script {
