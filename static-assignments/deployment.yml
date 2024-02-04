@@ -53,7 +53,7 @@
         url:  http://18.170.161.66:8082/artifactory/php-todo/php-todo
         dest: /home/ec2-user/
         url_username: admin
-        url_password:  cmVmdGtuOjAxOjE3Mzc3MjkzMDY6UnJ6d2dLcGRoVWNYbzdncGRUUzBXUGFNeUEx
+        url_password: cmVmdGtuOjAxOjE3Mzg1NDQ3NzA6SG5EdmZIcVFESXE4YWNVcWN5TXpENjdLeFVL
 
 
     - name: unzip the artifacts
@@ -64,7 +64,7 @@
 
     - name: deploy the code
       ansible.builtin.copy:
-        src: /home/ec2-user/var/lib/jenkins/workspace/php-todo_main/
+        src: /var/lib/jenkins/workspace/php-todo-app_main/
         dest: /var/www/html/
         force: yes
         remote_src: yes
