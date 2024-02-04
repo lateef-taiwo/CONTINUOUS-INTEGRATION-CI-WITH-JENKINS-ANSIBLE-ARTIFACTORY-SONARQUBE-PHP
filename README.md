@@ -760,7 +760,7 @@ ssh into the db to confirm.
         DB_CONNECTION=mysql
         DB_PORT=3306
 
-5. Update Jenkinsfile with proper pipeline configuration.
+5. Update Jenkinsfile of the php-todo app with proper pipeline configuration.
 
         pipeline {
         agent any
@@ -946,8 +946,7 @@ The Plot menu item
             [todo]
             <todo-private-IP>
 
-
-    * Create a /static-assignements/deployment.yml file and update it with the below snippet
+    * Create a /static-assignments/deployment.yml file and update it with the below snippet
 
                 - name: Deploying the PHP Applicaion to Dev Enviroment
                     become: true
@@ -1032,19 +1031,19 @@ The Plot menu item
 
 ![](./images/jfrog-click.png)
 
-You'll be prompted to type in your actual password and click on Genertate Token
+You'll be prompted to type in your actual password and click on Generate Token
 
 ![](./images/jfrog-generate-password.png)
 
 ![](./images/jfrog-generate-token.png)
 
-* Add this snippet to the Jenkinsfile
+* Add this snippet to the Jenkinsfile of the php-todo app
 
         stage ('Deploy to Dev Environment') {
         steps {
         build job: '<repository name>/main', parameters: [[$class: 'StringParameterValue', name: 'env', value: 'dev']], propagate: false, wait: true
+         }
         }
-  }
 
 * Scan the repo, the php-todo should build first and subsequently trigger the build of the ansible-config-mgt when it gets to the Deploy stage.
 
