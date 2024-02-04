@@ -942,7 +942,6 @@ The Plot menu item
     * Launch a server for the todo app
     *  Add the private Ip to the inventory list in dev
 
-
             [todo]
             <todo-private-IP>
 
