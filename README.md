@@ -1045,10 +1045,16 @@ You'll be prompted to type in your actual password and click on Generate Token
 
 * Scan the repo, the php-todo should build first and subsequently trigger the build of the ansible-config-mgt when it gets to the Deploy stage.
 
+ ![](./images/php-todo-2.png)
+
+ ![](./images/Run-ansible-playbook.png)
+
+ ![](./images/run-ansible-playbook-2.png)
+
 Even though we have implemented Unit Tests and Code Coverage Analysis with phpunit and phploc, we still need to implement Quality Gate to ensure that ONLY code with the required code coverage, and other quality standards make it through to the environments.
 
 To achieve this, we need to configure SonarQube – An open-source platform developed by SonarSource for continuous inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities.
 
 #### SONARQUBE INSTALLATION
 
-Although I achieved this by using the ansible-galaxy sonarqube role on an Ubuntu based server. (You can check my ansible-config repo for the codes). It can also be achieved by making use of some Linux Kernel configuration changes to ensure optimal performance of the tool – we will increase vm.max_map_count, file discriptor and ulimit.
+Although I achieved this by using the ansible-galaxy sonarqube role on an Ubuntu based server. (You can check my ansible-config repo for the codes). It can also be achieved by making use of some Linux Kernel configuration changes to ensure optimal performance of the tool – we will increase vm.max_map_count, file descriptor and ulimit.
