@@ -1106,3 +1106,7 @@ It can also be achieved by making use of some Linux Kernel configuration changes
 
 * Setup SonarQube scanner from Jenkins – Global Tool Configuration
  
+ ![](./images/sonarqube-scanner.png)
+
+* Update Jenkins Pipeline to include SonarQube scanning and Quality Gate. Below is the snippet for a Quality Gate stage in Jenkinsfile. The Quality gate should come in before you package the artifacts.
+ 
