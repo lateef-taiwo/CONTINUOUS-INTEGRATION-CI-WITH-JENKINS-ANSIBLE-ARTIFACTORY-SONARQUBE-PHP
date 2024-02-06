@@ -1057,4 +1057,32 @@ To achieve this, we need to configure SonarQube – An open-source platform deve
 
 #### SONARQUBE INSTALLATION
 
-Although I achieved this by using the ansible-galaxy sonarqube role on an Ubuntu based server. (You can check my ansible-config repo for the codes). It can also be achieved by making use of some Linux Kernel configuration changes to ensure optimal performance of the tool – we will increase vm.max_map_count, file descriptor and ulimit.
+ ![](./images/sonar-1.png)
+
+![](./images/sonar-2.png)
+
+ ![](./images/sonar-3.png)
+
+ ![](./images/sonar-4.png)
+
+I achieved this by running Ansible from Jenkins using the ansible-galaxy community sonarqube . If you face any error running it, you may need to do it manually by running ansible commands locally on your machine.
+
+It can also be achieved by making use of some Linux Kernel configuration changes to ensure optimal performance of the tool – we will increase vm.max_map_count, file descriptor and ulimit.
+
+#### Access Sonarqube via the web browser
+
+`http://server-public-ip:9000/sonar`
+
+* Ensure you open port 9000 in the inbound rules of the sonarqube instance.
+
+ ![](./images/sonar-port.png)
+
+ ![](./images/sonar-port.png)
+ 
+* Login to SonarQube with default administrator username and password – admin
+
+ ![](./images/sonar-login.png)
+
+ ![](./images/sonar-login-2.png)
+
+ #### CONFIGURE SONARQUBE AND JENKINS FOR QUALITY GATE
