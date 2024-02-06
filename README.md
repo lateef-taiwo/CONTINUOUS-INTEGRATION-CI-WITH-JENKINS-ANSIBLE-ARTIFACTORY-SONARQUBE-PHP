@@ -1086,3 +1086,23 @@ It can also be achieved by making use of some Linux Kernel configuration changes
  ![](./images/sonar-login-2.png)
 
  #### CONFIGURE SONARQUBE AND JENKINS FOR QUALITY GATE
+
+* In Jenkins, install SonarQube Scanner plugin
+* Navigate to configure system in Jenkins. Add SonarQube server as shown below:
+
+ ![](./images/sonar-config.png)
+
+* Generate authentication token in SonarQube
+
+ ![](./images/sonar-gen.png)
+
+* Configure Quality Gate Jenkins Webhook in SonarQube – The URL should point to your Jenkins server `http://{JENKINS_HOST}/sonarqube-webhook/`
+
+ ![](./images/sonar-webhooks.png)
+
+ ![](./images/sonar-webhooks-create.png)
+
+ ![](./images/sonar-webhooks-create-2.png)
+
+* Setup SonarQube scanner from Jenkins – Global Tool Configuration
+ 
