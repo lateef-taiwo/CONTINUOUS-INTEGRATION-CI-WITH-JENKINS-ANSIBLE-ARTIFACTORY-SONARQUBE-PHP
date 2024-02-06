@@ -1124,7 +1124,9 @@ NOTE: The above step will fail because we have not updated `sonar-scanner.proper
 
  ![](./images/sonar-config-2.png)
 
+* Add configuration related to php-todo project
+
  ![](./images/sonar-config-3.png)
 
-* Add configuration related to php-todo project
+NB: I had to add the `sonar.sources=/var/lib/jenkins/workspace/php-todo_main` because the error from the previous screenshot showed that the source to the projectKey wasn't specified.
 
