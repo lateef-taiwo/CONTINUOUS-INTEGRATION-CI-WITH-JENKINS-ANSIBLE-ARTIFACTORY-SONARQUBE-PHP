@@ -1124,4 +1124,7 @@ NOTE: The above step will fail because we have not updated `sonar-scanner.proper
 
  ![](./images/sonar-config-2.png)
 
+ ![](./images/sonar-config-3.png)
+
 * Add configuration related to php-todo project
+
