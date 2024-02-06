@@ -1057,4 +1057,71 @@ To achieve this, we need to configure SonarQube – An open-source platform deve
 
 #### SONARQUBE INSTALLATION
 
-Although I achieved this by using the ansible-galaxy sonarqube role on an Ubuntu based server. (You can check my ansible-config repo for the codes). It can also be achieved by making use of some Linux Kernel configuration changes to ensure optimal performance of the tool – we will increase vm.max_map_count, file descriptor and ulimit.
+ ![](./images/sonar-1.png)
+
+![](./images/sonar-2.png)
+
+ ![](./images/sonar-3.png)
+
+ ![](./images/sonar-4.png)
+
+I achieved this by running Ansible from Jenkins using the ansible-galaxy community sonarqube . If you face any error running it, you may need to do it manually by running ansible commands locally on your machine.
+
+It can also be achieved by making use of some Linux Kernel configuration changes to ensure optimal performance of the tool – we will increase vm.max_map_count, file descriptor and ulimit.
+
+#### Access Sonarqube via the web browser
+
+`http://server-public-ip:9000/sonar`
+
+* Ensure you open port 9000 in the inbound rules of the sonarqube instance.
+
+ ![](./images/sonar-port.png)
+
+ ![](./images/sonar-port.png)
+ 
+* Login to SonarQube with default administrator username and password – admin
+
+ ![](./images/sonar-login.png)
+
+ ![](./images/sonar-login-2.png)
+
+ #### CONFIGURE SONARQUBE AND JENKINS FOR QUALITY GATE
+
+* In Jenkins, install SonarQube Scanner plugin
+* Navigate to configure system in Jenkins. Add SonarQube server as shown below:
+
+ ![](./images/sonar-config.png)
+
+* Generate authentication token in SonarQube
+
+ ![](./images/sonar-gen.png)
+
+* Configure Quality Gate Jenkins Webhook in SonarQube – The URL should point to your Jenkins server `http://{JENKINS_HOST}/sonarqube-webhook/`
+
+ ![](./images/sonar-webhooks.png)
+
+ ![](./images/sonar-webhooks-create.png)
+
+ ![](./images/sonar-webhooks-create-2.png)
+
+* Setup SonarQube scanner from Jenkins – Global Tool Configuration
+ 
+ ![](./images/sonarqube-scanner.png)
+
+* Update Jenkins Pipeline to include SonarQube scanning and Quality Gate. Below is the snippet for a Quality Gate stage in Jenkinsfile. The Quality gate should come in before you package the artifacts.
+
+NOTE: The above step will fail because we have not updated `sonar-scanner.properties`
+
+![](./images/sonar-error.png)
+
+* Configure sonar-scanner.properties – From the step above, Jenkins will install the scanner tool on the Linux server. You will need to go into the tools directory on the server to configure the properties file in which SonarQube will require to function during pipeline execution.
+
+`cd /var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarQubeScanner/conf/`
+
+* Open sonar-scanner.properties file
+
+`sudo vi sonar-scanner.properties`
+
+ ![](./images/sonar-config-2.png)
+
+* Add configuration related to php-todo project
