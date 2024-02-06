@@ -1144,3 +1144,4 @@ There are two bugs, and there is 0.0% code coverage. (code coverage is a percent
 
 If you click on php-todo project for further analysis, you will see that there is 6 hours’ worth of technical debt, code smells and security issues in the code.
 
+![](./images/sonar-project-2.png)
