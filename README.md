@@ -1110,9 +1110,11 @@ It can also be achieved by making use of some Linux Kernel configuration changes
 
 * Update Jenkins Pipeline to include SonarQube scanning and Quality Gate. Below is the snippet for a Quality Gate stage in Jenkinsfile. The Quality gate should come in before you package the artifacts.
 
-NOTE: The above step will fail because we have not updated `sonar-scanner.properties`
+NOTE: The above step will fail because we have not updated `sonar-scanner.properties`. Although, at first, it failed because of version incompatibility, I had to change the sonarqube scanner to version 4.6.0.2311
 
 ![](./images/sonar-error.png)
+
+![](./images/sonarqube-scanner-version.png)
 
 * Configure sonar-scanner.properties – From the step above, Jenkins will install the scanner tool on the Linux server. You will need to go into the tools directory on the server to configure the properties file in which SonarQube will require to function during pipeline execution.
 
@@ -1128,5 +1130,17 @@ NOTE: The above step will fail because we have not updated `sonar-scanner.proper
 
  ![](./images/sonar-config-3.png)
 
-NB: I had to add the `sonar.sources=/var/lib/jenkins/workspace/php-todo_main` because the error from the previous screenshot showed that the source to the projectKey wasn't specified.
+NB: I had to add the `sonar.sources=/var/lib/jenkins/workspace/php-todo-app_main` because the error from the previous screenshot showed that the source to the projectKey wasn't specified.
+
+![](./images/sonar-successful.png)
+
+The quality gate we just included has no effect. Why? Well, because if you go to the SonarQube UI, you will realise that we just pushed a poor-quality code onto the development environment.
+
+* Navigate to php-todo project in SonarQube
+
+![](./images/sonar-project.png)
+
+There are two bugs, and there is 0.0% code coverage. (code coverage is a percentage of unit tests added by developers to test functions and objects in the code)
+
+If you click on php-todo project for further analysis, you will see that there is 6 hours’ worth of technical debt, code smells and security issues in the code.
 
