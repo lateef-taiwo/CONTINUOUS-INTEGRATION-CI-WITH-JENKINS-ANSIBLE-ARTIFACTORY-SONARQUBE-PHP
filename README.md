@@ -1164,3 +1164,50 @@ In the development environment, this is acceptable as developers will need to ke
     }
 
 To test, create different branches and push to GitHub. You will realise that only branches other than develop, hotfix, release, main, or master will be able to deploy the code. If everything goes well, you should be able to see something like this:
+
+![](./images/git-branch.png)
+
+![](./images/sonar-successful-2.png)
+
+Notice that with the current state of the code, it cannot be deployed to Integration environments due to its quality. In the real world, DevOps engineers will push this back to developers to work on the code further, based on SonarQube quality report. Once everything is good with code quality, the pipeline will pass and proceed with sipping the codes further to a higher environment.
+
+#### Configure Jenkins Slave
+* Introduce Jenkins agents/slaves – Add 2 more servers to be used as Jenkins slave. Configure Jenkins to run its pipeline jobs randomly on any available slave nodes.
+
+* Install Java
+
+  `sudo yum install java-11-openjdk-devel -y`
+
+  ![](./images/java-install.png)
+ 
+* Update the bash profile
+
+  `sudo -i`
+
+  `vi .bash_profile`
+
+        export JAVA_HOME=$(dirname $(dirname $(readlink $(readlink $(which java)))))
+        export PATH=$PATH:$JAVA_HOME/bin 
+        export CLASSPATH=.:$JAVA_HOME/jre/lib:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar
+
+* Reload the bash profile
+
+  `source ~/.bash_profile`
+
+* Goto Manage Jenkins and configure the new instance as slave
+
+![](./images/new-node.png)
+
+![](./images/new-node-2.png)
+
+!![](./images/new-node-3.png)
+
+![](./images/new-node-4.png)
+
+![](./images/agent.png)
+
+* Configure webhook
+
+![](./images/webhook.png)
+
+Congratulations! You have just experienced one of the most interesting and complex projects in you Project Based Learning journey so far.
