@@ -1206,7 +1206,7 @@ Notice that with the current state of the code, it cannot be deployed to Integra
 
 ![](./images/agent.png)
 
-* Configure webhook
+* Configure webhook between Jenkins and GitHub to automatically run the pipeline when there is a code push.
 
 ![](./images/webhook.png)
 
